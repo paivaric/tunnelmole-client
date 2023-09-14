@@ -10,10 +10,12 @@ export default async function hostnameAssigned(message: HostnameAssignedMessage,
         console.error('Please specify a port e.g. run "tmole 80"');
     }
 
+    const host = options.host || 'localhost';
+
     const httpUrl = `http://${message.hostname}`;
     const httpsUrl = `https://${message.hostname}`;
 
-    console.info(`${httpUrl} is forwarding to localhost:${port}`);
-    console.info(`${httpsUrl} is forwarding to localhost:${port}`);
+    console.info(`${httpUrl} is forwarding to ${host}:${port}`);
+    console.info(`${httpsUrl} is forwarding to ${host}:${port}`);
     eventHandler.emit(URL_ASSIGNED, httpsUrl);
 }

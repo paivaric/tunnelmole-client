@@ -8,11 +8,12 @@ import { Options } from "../options.js";
 
 export default async function forwardedRequest(forwardedRequestMessage: ForwardedRequestMessage, websocket: HostipWebSocket, options : Options) {
     const port = options.port;
+    const host = options.host || 'localhost';
     const { requestId, url, headers } = forwardedRequestMessage;
 
     // @todo: Once GET is working, add support for all HTTP methods
     const requestOptions : http.RequestOptions = {
-        hostname: 'localhost',
+        hostname: host,
         method: forwardedRequestMessage.method,
         port: port,
         path: url,

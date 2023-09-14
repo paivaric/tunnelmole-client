@@ -27,11 +27,11 @@ async function run()
 `
 
 Get a random public URL: "tmole <port>"
-For example you would run "tmole 80" (without the quotes) if your local server is running on port 80.
+For example you would run "tmole 80" or "tmole 192.168.12.34:80" (without the quotes) if your local server is running on port localhost:80 or 192.168.12.34:80.
 Your server will then be accessible under a random URL like https://f38fg.tunnelmole.net which will be shown in the output.
 This method is free and is a good way to get started.
 
-Get a public URL that does not change: "tmole <port> as <subdomain>.tunnelmole.net"
+Get a public URL that does not change: "tmole <host optional>:<port> as <subdomain>.tunnelmole.net"
 For example you would run "tmole 80 as myapi.tunnelmole.net" (without the quotes) if your server runs on port 80 and you want to make it available with the domain myapi.tunnelmole.net
 This method requires a subscription which comes with an API key. Get one at https://dashboard.tunnelmole.com from $5.99 per month and support the development of this app.
 
